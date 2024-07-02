@@ -104,18 +104,19 @@ class LoginPage extends StatelessWidget {
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   // google button
                   SquareTile(imagePath: 'lib/images/google-sign.png'),
 
                   const SizedBox(
                     width: 10,
                   ),
-
                   // apple button
                   SquareTile(imagePath: 'lib/images/apple-sign.png'),
                 ],
               ),
+
+              SizedBox(height: 50)
               // register
             ],
           ),
