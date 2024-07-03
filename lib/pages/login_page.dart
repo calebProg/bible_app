@@ -11,6 +11,7 @@ class LoginPage extends StatelessWidget {
 
   //sign user in
   void signUserIn() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

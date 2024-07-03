@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "871883896435",
+    "project_id": "auth-production-71a58",
+    "storage_bucket": "auth-production-71a58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871883896435:android:841a47e189f271ae24dc06",
+        "android_client_info": {
+          "package_name": "com.sedibe.bibleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6RKKcG8Cu9diKkCD-Ug1yK7-4QKhi_F8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
