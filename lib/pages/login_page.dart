@@ -21,14 +21,14 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // logo
-              Icon(
+              const Icon(
                 Icons.lock,
                 size: 100,
               ),
 
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               // welcome
-              Text(
+              const Text(
                 'Welcome back Calvin',
                 style: TextStyle(
                   color: Color.fromARGB(255, 80, 78, 78),
@@ -118,9 +118,18 @@ class LoginPage extends StatelessWidget {
 
               SizedBox(height: 50),
               // register
-              Text('Not a member?'),
+              Text(
+                'Not a member?',
+                style: TextStyle(color: Colors.grey[700]),
+              ),
               const SizedBox(width: 4),
-              Text('Register now'),
+              const Text(
+                'Register now',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ],
           ),
         ),
