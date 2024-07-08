@@ -29,16 +29,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       home: const AuthPage(),
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       routes: {
-        'login_or_register_page': (context) => const LoginOrRegisterPage(),
-        'home_page': (context) => HomePage(),
-        'profile_page': (context) => ProfilePage(),
+        '/login_or_register_page': (context) => const LoginOrRegisterPage(),
+        '/home_page': (context) => HomePage(),
+        '/profile_page': (context) => ProfilePage(),
       },
     );
   }
