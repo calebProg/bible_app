@@ -6,7 +6,7 @@ import 'package:bible_app/components/my_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
-  RegisterPage({Key? key, required this.onTap}) : super(key: key);
+  const RegisterPage({super.key, required this.onTap});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -62,7 +62,7 @@ class _RegisterPageState extends State<RegisterPage> {
             title: Center(
               child: Text(
                 message,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             ));
       },

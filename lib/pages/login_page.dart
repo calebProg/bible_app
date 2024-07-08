@@ -6,7 +6,7 @@ import 'package:bible_app/components/my_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;
-  LoginPage({Key? key, required this.onTap}) : super(key: key);
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             title: Center(
               child: Text(
                 message,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             ));
       },
@@ -164,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                   'Not a member?',
                   style: TextStyle(color: Colors.grey[700]),
                 ),
-                const SizedBox(width: 4),
+                const SizedBox(width: 2),
                 GestureDetector(
                   onTap: widget.onTap,
                   child: const Text(
