@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({Key? key}) : super(key: key);
+  const MyDrawer({super.key});
   // signUserOut
   void signUserOut() {
     FirebaseAuth.instance.signOut();
@@ -57,7 +57,7 @@ class MyDrawer extends StatelessWidget {
                     // pop drawer
                     Navigator.pop(context);
                     // navigate to progile page
-                    Navigator.pushNamed(context, '/profile_page');
+                    Navigator.pushNamed(context, '/create_message');
                   },
                 ),
               ),
