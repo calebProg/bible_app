@@ -15,30 +15,51 @@ class _HomePageState extends State<HomePage> {
   final FirestoreService firestoreService = FirestoreService();
   final user = FirebaseAuth.instance.currentUser!;
   final username = FirebaseAuth.instance.currentUser!.email!;
-  final TextEditingController noteController = TextEditingController();
+
+  final TextEditingController topicController = TextEditingController();
+  final TextEditingController referenceController = TextEditingController();
+  final TextEditingController messageController = TextEditingController();
 
   void openNoteBox([String? docID]) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        content: TextField(
-          controller: noteController,
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: topicController,
+              decoration: InputDecoration(labelText: 'Topic'),
+            ),
+            TextField(
+              controller: referenceController,
+              decoration: InputDecoration(labelText: 'Reference'),
+            ),
+            TextField(
+              controller: messageController,
+              decoration: InputDecoration(labelText: 'Message'),
+            ),
+          ],
         ),
         actions: [
           ElevatedButton(
             onPressed: () {
               // add a new note
               if (docID == null) {
-                firestoreService.addNote(noteController.text);
+                firestoreService.addNote(topicController.text,
+                    referenceController.text, messageController.text);
               }
               // update an existing note
               else {
-                firestoreService.updateNote(docID, noteController.text);
+                firestoreService.updateNote(docID, topicController.text,
+                    referenceController.text, messageController.text);
               }
-              noteController.clear();
+              topicController.clear();
+              referenceController.clear();
+              messageController.clear();
               Navigator.pop(context);
             },
-            child: Text("Save note"),
+            child: Text("Save"),
           ),
         ],
       ),
@@ -72,14 +93,30 @@ class _HomePageState extends State<HomePage> {
                   Map<String, dynamic> data =
                       document.data() as Map<String, dynamic>;
 
-                  String noteText = data['note'];
+                  String topic = data['topic'];
+                  String reference = data['reference'];
+                  String message = data['message'];
 
                   // display list tile
                   return ListTile(
-                    title: Text(noteText),
-                    trailing: IconButton(
-                      onPressed: () => openNoteBox(docID),
-                      icon: const Icon(Icons.settings),
+                    // diplay note together
+                    // combined the string using interpolations
+                    title: Text(
+                        "T O P I C: $topic\nR E F E R E N C E : $reference\nM E S S A G E: $message"),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // update button
+                        IconButton(
+                          onPressed: () => openNoteBox(docID),
+                          icon: const Icon(Icons.add_task),
+                        ),
+                        // delete button
+                        IconButton(
+                          onPressed: () => firestoreService.deleteNote(docID),
+                          icon: const Icon(Icons.delete),
+                        ),
+                      ],
                     ),
                   );
                 });
