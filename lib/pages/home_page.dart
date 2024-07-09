@@ -69,14 +69,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: Text(username),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => openNoteBox(),
         child: const Icon(Icons.add),
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: firestoreService.getNotesStream(),
@@ -112,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "TOPIC: $topic",
+                              "\nTOPIC: $topic",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
@@ -120,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             SizedBox(height: 5),
                             Text(
-                              "REFERENCE: $reference",
+                              "\nREFERENCE: $reference",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.grey[700],
@@ -129,16 +131,17 @@ class _HomePageState extends State<HomePage> {
                             ),
                             SizedBox(height: 10),
                             Text(
-                              "MESSAGE: $message",
+                              "\nMESSAGE: $message",
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 16,
                               ),
                             ),
                             SizedBox(height: 10),
                             Text(
                               "DATE: " + time.toDate().toString(),
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ],
@@ -150,12 +153,14 @@ class _HomePageState extends State<HomePage> {
                             IconButton(
                               onPressed: () => openNoteBox(docID),
                               icon: const Icon(Icons.edit),
+                              iconSize: 32,
                             ),
                             // delete button
                             IconButton(
                               onPressed: () =>
                                   firestoreService.deleteNote(docID),
                               icon: const Icon(Icons.delete),
+                              iconSize: 32,
                             ),
                           ],
                         ),

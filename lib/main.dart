@@ -2,6 +2,7 @@ import 'package:bible_app/pages/auth_page.dart';
 import 'package:bible_app/pages/home_page.dart';
 import 'package:bible_app/pages/login_or_register_page.dart';
 import 'package:bible_app/pages/profile_page.dart';
+import 'package:bible_app/themes/light_mode.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -32,8 +33,7 @@ class MyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       home: const AuthPage(),
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: lightMode,
       routes: {
         '/login_or_register_page': (context) => const LoginOrRegisterPage(),
         '/home_page': (context) => HomePage(),
