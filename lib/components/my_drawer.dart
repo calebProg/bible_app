@@ -1,4 +1,3 @@
-import 'package:bible_app/pages/profile_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +56,7 @@ class MyDrawer extends StatelessWidget {
                     // pop drawer
                     Navigator.pop(context);
                     // navigate to progile page
-                    Navigator.pushNamed(context, '/create_message');
+                    Navigator.pushNamed(context, '/profile_page');
                   },
                 ),
               ),

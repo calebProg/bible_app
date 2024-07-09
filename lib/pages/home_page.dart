@@ -96,27 +96,70 @@ class _HomePageState extends State<HomePage> {
                   String topic = data['topic'];
                   String reference = data['reference'];
                   String message = data['message'];
+                  Timestamp time = data['timestamp'];
 
                   // display list tile
-                  return ListTile(
-                    // diplay note together
-                    // combined the string using interpolations
-                    title: Text(
-                        "T O P I C: $topic\nR E F E R E N C E : $reference\nM E S S A G E: $message"),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // update button
-                        IconButton(
-                          onPressed: () => openNoteBox(docID),
-                          icon: const Icon(Icons.add_task),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      elevation: 5,
+                      child: ListTile(
+                        contentPadding: EdgeInsets.all(16.0),
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "TOPIC: $topic",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              "REFERENCE: $reference",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey[700],
+                                fontSize: 14,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "MESSAGE: $message",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "DATE: " + time.toDate().toString(),
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
                         ),
-                        // delete button
-                        IconButton(
-                          onPressed: () => firestoreService.deleteNote(docID),
-                          icon: const Icon(Icons.delete),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            // update button
+                            IconButton(
+                              onPressed: () => openNoteBox(docID),
+                              icon: const Icon(Icons.edit),
+                            ),
+                            // delete button
+                            IconButton(
+                              onPressed: () =>
+                                  firestoreService.deleteNote(docID),
+                              icon: const Icon(Icons.delete),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   );
                 });

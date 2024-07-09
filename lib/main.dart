@@ -1,5 +1,4 @@
 import 'package:bible_app/pages/auth_page.dart';
-import 'package:bible_app/pages/create_message.dart';
 import 'package:bible_app/pages/home_page.dart';
 import 'package:bible_app/pages/login_or_register_page.dart';
 import 'package:bible_app/pages/profile_page.dart';
@@ -39,7 +38,6 @@ class MyApp extends StatelessWidget {
         '/login_or_register_page': (context) => const LoginOrRegisterPage(),
         '/home_page': (context) => HomePage(),
         '/profile_page': (context) => ProfilePage(),
-        '/create_message': (context) => CreateMessage(),
       },
     );
   }
