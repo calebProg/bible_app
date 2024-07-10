@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyB6RKKcG8Cu9diKkCD-Ug1yK7-4QKhi_F8',
-    appId: '1:871883896435:android:841a47e189f271ae24dc06',
+    appId: '1:871883896435:android:6c7a7a87488234cf24dc06',
     messagingSenderId: '871883896435',
     projectId: 'auth-production-71a58',
     storageBucket: 'auth-production-71a58.appspot.com',
@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '871883896435',
     projectId: 'auth-production-71a58',
     storageBucket: 'auth-production-71a58.appspot.com',
+    iosClientId: '871883896435-tusbqj5foduom8a1a0khj4tqm00oa0fb.apps.googleusercontent.com',
     iosBundleId: 'com.example.bibleApp',
   );
 
@@ -72,6 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '871883896435',
     projectId: 'auth-production-71a58',
     storageBucket: 'auth-production-71a58.appspot.com',
+    iosClientId: '871883896435-tusbqj5foduom8a1a0khj4tqm00oa0fb.apps.googleusercontent.com',
     iosBundleId: 'com.example.bibleApp',
   );
 
@@ -83,4 +85,5 @@ class DefaultFirebaseOptions {
     authDomain: 'auth-production-71a58.firebaseapp.com',
     storageBucket: 'auth-production-71a58.appspot.com',
   );
+
 }

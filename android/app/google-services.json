@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:871883896435:android:841a47e189f271ae24dc06",
+        "mobilesdk_app_id": "1:871883896435:android:6c7a7a87488234cf24dc06",
         "android_client_info": {
-          "package_name": "com.sedibe.bibleapp"
+          "package_name": "com.android.bibleapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "871883896435-2p1pji4f69b49ibi0dkisvaghtn0gh33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB6RKKcG8Cu9diKkCD-Ug1yK7-4QKhi_F8"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871883896435-2p1pji4f69b49ibi0dkisvaghtn0gh33.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "871883896435-tusbqj5foduom8a1a0khj4tqm00oa0fb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bibleApp"
+              }
+            }
+          ]
         }
       }
     }

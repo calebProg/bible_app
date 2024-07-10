@@ -60,6 +60,23 @@ class MyDrawer extends StatelessWidget {
                   },
                 ),
               ),
+              // settings tile
+              Padding(
+                padding: const EdgeInsets.only(left: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.settings,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  ),
+                  title: const Text("S E T T I N G S"),
+                  onTap: () {
+                    // pop drawer
+                    Navigator.pop(context);
+                    // navigate to progile page
+                    Navigator.pushNamed(context, '/settings_page');
+                  },
+                ),
+              ),
             ],
           ),
 
