@@ -71,7 +71,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: Text(username),
+        title: Text(
+          username,
+          style: const TextStyle(
+            fontSize: 16,
+          ),
+        ),
         backgroundColor: Theme.of(context).colorScheme.surface,
         elevation: 0,
       ),
@@ -124,13 +129,12 @@ class _HomePageState extends State<HomePage> {
                             const SizedBox(height: 5),
                             Text(
                               "\nREFERENCE: $reference",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors.grey[700],
                                 fontSize: 14,
                               ),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 2),
                             Text(
                               "\nMESSAGE: $message",
                               style: const TextStyle(
