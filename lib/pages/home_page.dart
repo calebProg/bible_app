@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -29,15 +29,15 @@ class _HomePageState extends State<HomePage> {
           children: [
             TextField(
               controller: topicController,
-              decoration: InputDecoration(labelText: 'Topic'),
+              decoration: const InputDecoration(labelText: 'Topic'),
             ),
             TextField(
               controller: referenceController,
-              decoration: InputDecoration(labelText: 'Reference'),
+              decoration: const InputDecoration(labelText: 'Reference'),
             ),
             TextField(
               controller: messageController,
-              decoration: InputDecoration(labelText: 'Message'),
+              decoration: const InputDecoration(labelText: 'Message'),
             ),
           ],
         ),
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
               messageController.clear();
               Navigator.pop(context);
             },
-            child: Text("Save"),
+            child: const Text("Save"),
           ),
         ],
       ),
@@ -69,16 +69,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: Text(username),
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => openNoteBox(),
-        child: const Icon(Icons.add),
         backgroundColor: Theme.of(context).colorScheme.tertiary,
+        child: const Icon(Icons.add),
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: firestoreService.getNotesStream(),
@@ -104,23 +104,24 @@ class _HomePageState extends State<HomePage> {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
+                      color: Theme.of(context).colorScheme.secondary,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                      elevation: 5,
+                      elevation: 4,
                       child: ListTile(
-                        contentPadding: EdgeInsets.all(16.0),
+                        contentPadding: const EdgeInsets.all(16.0),
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "\nTOPIC: $topic",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                               ),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Text(
                               "\nREFERENCE: $reference",
                               style: TextStyle(
@@ -129,17 +130,17 @@ class _HomePageState extends State<HomePage> {
                                 fontSize: 14,
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(
                               "\nMESSAGE: $message",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 16,
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 20),
                             Text(
-                              "DATE: " + time.toDate().toString(),
-                              style: TextStyle(
+                              "DATE: ${time.toDate()}",
+                              style: const TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                               ),
